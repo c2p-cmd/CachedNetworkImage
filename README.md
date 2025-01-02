@@ -1,5 +1,8 @@
 # CachedNetworkImage
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fc2p-cmd%2FCachedNetworkImage%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/c2p-cmd/CachedNetworkImage)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fc2p-cmd%2FCachedNetworkImage%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/c2p-cmd/CachedNetworkImage)
+
 A lightweight, SwiftUI-compatible library for efficiently loading, caching, and displaying images from network URLs. `CachedNetworkImage` helps reduce redundant network requests by caching images and supports customizable placeholders, error handling, and optional resizing for improved performance.
 
 ---
