@@ -23,7 +23,7 @@ struct CachedNetworkImage<ImageContent: View, PlaceholderContent: View, ErrorCon
     /// A view builder for rendering a placeholder while the image loads.
     @ViewBuilder var placeholder: () -> PlaceholderContent
     /// An optional view builder for rendering an error message if the image fails to load.
-    var errorView: ((Error) -> ErrorContent)?
+    @ViewBuilder var errorView: (Error) -> ErrorContent
     
     /// The cache manager responsible for caching and retrieving images.
     private let cacheManager: CacheManager
@@ -42,7 +42,7 @@ struct CachedNetworkImage<ImageContent: View, PlaceholderContent: View, ErrorCon
         cacheTime: TimeInterval = 3600,
         imageView: @escaping (Image) -> ImageContent,
         placeholder: @escaping () -> PlaceholderContent = { ProgressView() },
-        errorView: ((Error) -> ErrorContent)? = nil
+        errorView: @escaping (Error) -> ErrorContent = { error in Text(error.localizedDescription).foregroundStyle(.red) }
     ) {
         self.url = url
         self.highRes = highRes
@@ -65,11 +65,7 @@ struct CachedNetworkImage<ImageContent: View, PlaceholderContent: View, ErrorCon
             case .success(let image):
                 imageView(image)
             case .failure(let error):
-                if let errorView = errorView {
-                    errorView(error)
-                } else {
-                    placeholder()
-                }
+                errorView(error)
             }
         }
         .padding()
