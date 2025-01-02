@@ -97,6 +97,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Contributing
 
 Contributions are welcome! Please follow these steps:
-	1.	Fork the repository.
-	2.	Create a new branch with your feature or bug fix.
-	3.	Submit a pull request with detailed information about your changes
+1. Fork the repository.
+2. Create a new branch with your feature or bug fix.
+3. Submit a pull request with detailed information about your changes
